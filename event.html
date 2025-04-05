@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognitron'25 Events</title>
+    <link rel="stylesheet" href="event.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">   
+<script src="https://kit.fontawesome.com/fe21925bac.js" crossorigin="anonymous"></script>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+        
+    .header-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(to right, rgb(172, 6, 187), rgb(7, 136, 168));
+        padding: 10px;
+        text-align: center;
+        font-family: "poppins";
+    }
+    
+    .logo {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+    }
+    
+    .header-text h1,
+    .header-text h4,
+    .header-text p {
+        margin: 5px 0;
+        color: white;
+        font-weight: 600;
+    }
+    @media (max-width: 1024px) {
+        .header-text h1 {
+            font-size: 22px;
+        }
+        .logo {
+            width: 70px;
+            height: 70px;
+        }
+    
+    }
+    @media (max-width: 768px) {
+        .header-container {
+            flex-direction: column;
+        }
+    }
+    @media (max-width: 480px) {
+        .logo {
+            width: 60px;
+            height: 60px;
+        }
+        .header-text h1 {
+            font-size: 18px;
+        }
+    
+        .header-text h4,
+        .header-text p,
+        .overlay p {
+            font-size: 14px;
+        }
+    }
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 15px 20px;
+        background: linear-gradient(to right, rgb(172, 6, 187), rgb(7, 136, 168));
+        position: relative;
+    }
+    
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        transition: 0.3s ease-in-out;
+    }
+    
+    .nav-links a:hover {
+        color: #020c22;
+    }
+    
+    .burger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    
+    .burger div {
+        width: 30px;
+        height: 3px;
+        background: white;
+        margin: 5px;
+        transition: all 0.3s ease;
+    }
+      
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 15px 20px;
+        background: linear-gradient(to right, rgb(172, 6, 187), rgb(7, 136, 168));
+        position: relative;
+        font-family: "poppins";
+    }
+    
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        transition: 0.3s ease-in-out;
+    }
+    
+    .nav-links a:hover {
+        color: #020c22;
+    }
+    
+    .burger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    
+    .burger div {
+        width: 30px;
+        height: 3px;
+        background: white;
+        margin: 5px;
+        transition: all 0.3s ease;
+    }
+    @media (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+            align-items: flex-end;
+        }
+    
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            background: rgba(0, 0, 0, 0.9);
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+    
+        .nav-links.active {
+            display: flex;
+        }
+    
+        .burger {
+            display: flex;
+        }
+    }
+    @media (max-width: 480px) {
+        .navbar {
+            flex-direction: column;
+            align-items: flex-end;
+        }
+    }
+    footer {
+        background: linear-gradient(to right, rgb(172, 6, 187), rgb(7, 136, 168));
+        color: white;
+        padding: 40px 20px 20px;
+        text-align: center;
+        font-family: "poppins";
+      }
+      
+      .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 20px;
+      }
+      
+      .footer-about,
+      .footer-social,
+      .footer-map {
+        flex: 1 1 100px;
+        max-width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+      }
+      .footer-about{
+        text-align: justify;
+      }
+      
+      .footer-container h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+    .footer-social a{
+        font-size: 40px;
+        margin:10px;
+    }
+      
+      .footer-social a {
+        color: #fff;
+        text-decoration: underline;
+        
+      }
+      
+      .footer-social a:hover {
+        color: #000308;
+      }
+      
+      .footer-map iframe {
+        width: 300px;
+        height: 200px;
+        border: 0;
+        border-radius: 10px;
+      }
+      
+      .footer-bottom {
+        margin-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 15px;
+        font-size: 1rem;
+      }
+      
+      /* Responsive Styling */
+      @media (max-width: 768px) {
+        .footer-container {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap:10px;
+        }
+      
+        .footer-about,
+        .footer-social,
+        .footer-map {
+          text-align: center;
+        }
+      
+        .footer-container h3 {
+          font-size: 1.3rem;
+        }
+      
+        .footer-bottom {
+          font-size: 0.9rem;
+        }
+
+      }
+      @media (max-width: 480px){
+        .footer-container p,a {
+            font-size: 0.5rem;
+          }
+        
+      }
+
+      .container {
+        flex-grow: 1;
+        padding: 20px;
+    }
+    
+    .container h1 {
+        color: white;
+        font-size: 50px;
+        font-weight: 400;
+        margin-bottom: 20px;
+        font-family: "poppins";
+    }
+    
+    /* Filter Buttons */
+    .buttons {
+        text-align: right;
+        margin-bottom: 20px;
+    }
+    
+    button {
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+        border: none;
+        border-radius: 30px;
+        background-image: linear-gradient(to right, rgb(172, 6, 187), rgb(7, 136, 168));
+        color: white;
+        font-family: "Poppins", sans-serif;
+        transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+        background-image: linear-gradient(to right, rgb(110, 4, 119), rgb(3, 80, 99));
+    }
+    main{
+          background-image: url(Poster\ BG.png);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          background-attachment: scroll;
+
+    }
+    
+      #events {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        font-family: "poppins";
+        font-size: 15px;
+    }
+    
+    .event-div {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .event-div h2 {
+        color: white;
+        font-size: 15px;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+    
+    .event-div ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .event-div ul li {
+        list-style: none;
+        color: white;
+        width: 400px;
+        height: 300px;
+        background-image: linear-gradient(to right, rgb(172, 6, 187), rgb(7, 136, 168));
+        margin: 10px;
+        border-radius: 900px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        line-height: 30px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        text-align: center;
+    }
+    
+    .event-div ul li:hover {
+        transform: scale(1.05);
+    }
+    
+    .event-div ul li h3 {
+        font-size: 25px;
+        font-weight: 400;
+    }
+    
+    /* Back Button */
+    .Back {
+        margin: 20px 0;
+        text-align: center;
+    }
+    @media (max-width: 768px){
+
+        .container h1 {
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            font-family: "poppins";
+        }
+        #events {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            font-family: "poppins";
+            font-size: 10px;
+        
+    }
+}
+    
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="Anna university _logo.png" class="logo" alt="University Logo">
+            <div class="header-text">
+                <h1>UNIVERSITY COLLEGE OF ENGINEERING</h1>
+                <h1>ANNA UNIVERSITY</h1>
+                <h4>ARIYALUR - 621 731</h4>
+                <p>Vilangudi (Trichy - Chidambaram NH81)</p>
+            </div>
+            <img src="small logo.jpg" class="logo" alt="Small Logo">
+        </div>
+    </header>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <a href="index.html"><li>Home</li></a>
+            <a href="event.html"><li>Events</li></a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdKJszy25dMJvxzDX2cuJQ4KGYAN-KElMxEx4oCOKV3LLbYvw/viewform?usp=dialog"><li>Register</li></a>
+            
+        </ul>
+        <div class="burger" onclick="toggleMenu()">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <h1>Events</h1>
+            <div class="buttons">
+                <button onclick="showEvents('all')">All Events</button>
+                <button onclick="showEvents('tech')">Tech Events</button>
+                <button onclick="showEvents('nontech')">Non-Tech Events</button>
+            </div>
+    
+            <div id="events">
+                <div id="all-events" class="event-div">
+                    <h2>All Events</h2>
+                    <ul>
+                        
+                        <li>
+                            
+                            <h3>Paper Presentation</h3>
+                            <p>  A competition of technical papers </p>
+                            <p><i class="fa-solid fa-clock"></i></i> Timing - 10.30 am to 12.00 pm </p>
+                            <p><i class="fa-solid fa-location-dot"></i> Place - Auditorium hall</p>
+    
+                        </li>
+                        <li><h3>TechExpo</h3>
+                            <p>  A competition of Prototypes </p>
+                            <p><i class="fa-solid fa-clock"></i></i> Timing - 10.30 am to 12.00 pm </p>
+                            <p><i class="fa-solid fa-location-dot"></i> Place - Room.no - 212</p>
+    
+                           
+                        <li>
+                           
+                            <h3>Quiz-O-Mania</h3>
+                            <p> challenging with trivia questions. </p>
+                            <p><i class="fa-solid fa-clock"></i></i> Timing - 10.30 am to 12.00 pm </p>
+                            <p><i class="fa-solid fa-location-dot"></i> Place - Auditorium hall</p>
+    
+                           
+                        <li><h3>I-Connect</h3>
+                            <p> Testing your memory event</p>
+                            <p><i class="fa-solid fa-clock"></i></i> Timing - 10.30 am to 12.00 pm </p>
+                            <p><i class="fa-solid fa-location-dot"></i> Place - Auditorium hall</p>
+    
+                            
+                        <li><h3>Battle of Bids</h3>
+                            <p>Auction bids for fanatics </p>
+                            <p><i class="fa-solid fa-clock"></i></i> Timing - 10.30 am to 12.00 pm </p>
+                            <p><i class="fa-solid fa-location-dot"></i> Place - Auditorium hall</p>
+    
+                            
+                            <li><h3>Decode the Mystery</h3>
+                                <p>Mystrey of Frames  </p>
+                                <p><i class="fa-solid fa-clock"></i></i> Timing - 10.30 am to 12.00 pm </p>
+                                <p><i class="fa-solid fa-location-dot"></i> Place - Auditorium hall</p>
+        
+                                
+                    </ul>
+                </div>
+    
+                <div id="tech-events" class="event-div">
+                    <h2>Tech Events</h2>
+                    <ul>
+                        <li><h3>Paper Presentation</h3>
+                            <p>  A competition of technical papers </p>
+                            <p><i class="fa-solid fa-clock"></i></i> Timing - 10.30 am to 12.00 pm </p>
+                            <p><i class="fa-solid fa-location-dot"></i> Place - Auditorium hall</p>
+    
+                           
+                        <li><h3>TechExpo</h3>
+                            <p>  A competition of Prototypes </p>
+                            <p><i class="fa-solid fa-clock"></i></i> Timing - 10.30 am to 12.00 pm </p>
+                            <p><i class="fa-solid fa-location-dot"></i> Place - Room.no - 212</p>
+    
+                            
+                        <li><h3>Quiz-O-Mania</h3>
+                            <p> challenging with trivia questions. </p>
+                            <p><i class="fa-solid fa-clock"></i></i> Timing - 10.30 am to 12.00 pm </p>
+                            <p><i class="fa-solid fa-location-dot"></i> Place - Auditorium hall</p>
+    
+                           
+                    </ul>
+                </div>
+    
+                <div id="nontech-events" class="event-div">
+                    <h2>Non-Tech Events</h2>
+                    <ul>
+                        <li><h3>I-Connect</h3>
+                            <p> Testing your memory event</p>
+                            <p><i class="fa-solid fa-clock"></i></i> Timing - 10.30 am to 12.00 pm </p>
+                            <p><i class="fa-solid fa-location-dot"></i> Place - Auditorium hall</p>
+    
+                            
+                        <li><h3>Battle of Bids</h3>
+                            <p>Auction bids for fanatics </p>
+                            <p><i class="fa-solid fa-clock"></i></i> Timing - 10.30 am to 12.00 pm </p>
+                            <p><i class="fa-solid fa-location-dot"></i> Place - Auditorium hall</p>
+    
+                           
+                        <li><h3>Decode the Mystery</h3>
+                            <p>Mystrey of Frames  </p>
+                            <p><i class="fa-solid fa-clock"></i></i> Timing - 10.30 am to 12.00 pm </p>
+                            <p><i class="fa-solid fa-location-dot"></i> Place - Auditorium hall</p>
+    
+                            
+                    </ul>
+                </div>
+            </div>
+            <div class="Back">
+                <a href="index.html"><button>Back to home</button></a></div>
+            
+        </div>
+        <script src="event.js"></script>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <!-- About Us -->
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>Cognitron'25 is a premier tech symposium organized by the students of electronics and communication engineering,University College of Engineering, Ariyalur. Join us for an exciting experience filled with innovation and creativity.</p>
+                <p>By SAELCO</p>
+                <p>(students association of electronics and communication engineering)</p>
+            </div>
+    
+            <!-- Social Media Links -->
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+               
+                <a href="https://www.instagram.com/cognitron_2k25/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="mailto:cognitron25@gmail.com"><i class="fa-solid fa-envelope" target="blank"></i></a>
+
+                <a href="https://wa.me/6382724832" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+    
+            <!-- Integrated Google Map -->
+            <div class="footer-map">
+                <h3>Find Us</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.769103340701!2d79.19693510997647!3d11.130566688994778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baad81dd8eb603d%3A0x9d34563b95e3e873!2sUniversity%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1743757353043!5m2!1sen!2sin" width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Cognitron'25. All Rights Reserved.</p>
+        </div>
+    </footer>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,11 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fe21925bac.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
-
-    <script src="https://kit.fontawesome.com/fe21925bac.js" crossorigin="anonymous"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -147,92 +146,185 @@
                 align-items: flex-end;
             }
         }
-        .image-container {
-            position: relative;
-            width: 100%;
-            min-height: 100px;
-            background-image: url('your-image.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        
-        
-        
-        
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .overlay {
-            position: absolute;
-            top: 55%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-            padding: 20px;
-            text-align: center;
-            margin-top: 30px;
-        }
-        .overlay h1{
-            font-size:30px;
-            font-family:"charm";
-        
-        .overlay p {
-            margin-bottom: 5px;
-            font-size: 1.05rem;
-            color:white;
-            font-family: "poppins";
-            font-weight: 400;
-        }
-        
-        button {
-            padding: 10px 20px;
-            margin: 10px;
-            background: linear-gradient(to right, rgb(224, 21, 243), rgb(24, 186, 226));
-            border: none;
-            border-radius: 50px;
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        
-        button:hover {
-            transform: scale(1.05);
-            background: linear-gradient(to right, rgb(110, 4, 119), rgb(3, 80, 99));
-            box-shadow: 0 0 15px rgba(203, 38, 218, 0.6), 0 0 30px rgba(0, 168, 234, 0.4);
-        }
-    
-        @media (max-width: 480px) {
-            .overlay {
-                top: 50%; /* adjust if necessary */
-                transform: translate(-50%, -50%);
-                padding: 10px;
-                margin-top: 50px;
-                margin-bottom: 70px;
-            }
-        
-            .overlay p {
-                font-size: 10px;
-                
-                margin-bottom: 0px;
+        /* General container */
+.main-background {
+    background-image: url('BG poster 1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 
-            }
-        
-            button {
-                font-size: 8px;
-                padding: 8px 16px;
-            }
-        }
-        
-    
+/* Image container for overlaying content */
+.image-container {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: none; /* Hide duplicate image since we're using background */
+}
+
+/* Overlay styling */
+.overlay {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.overlay h1 {
+    color: white;
+    font-size: 8rem;
+    font-family: "charm";
+    letter-spacing: 0.5rem;
+    margin-bottom: 10px;
+    font-weight: 10;
+}
+
+.overlay p {
+    font-size: 1.2rem;
+    color: yellow;
+    font-family: "poppins";
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+/* Align instructions and buttons */
+.align {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Instructions box */
+.general {
+    text-align: left;
+    font-size: 15px;
+    color: white;
+    font-family: "poppins";
+    padding: 20px;
+    background-image: linear-gradient(to right, rgb(172, 6, 187), rgb(7, 136, 168));
+    width: 500px;
+    border-radius: 50px;
+    margin: 10px;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.general h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.general p {
+    font-size: 15px;
+    margin-bottom: 5px;
+    font-weight: 200;
+    color: white;
+}
+
+/* Buttons styling */
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    background: linear-gradient(to right, rgb(224, 21, 243), rgb(24, 186, 226));
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, rgb(110, 4, 119), rgb(3, 80, 99));
+    box-shadow: 0 0 15px rgba(203, 38, 218, 0.6), 0 0 30px rgba(0, 168, 234, 0.4);
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+    .overlay h1 {
+        font-size: 3.5rem;
+        letter-spacing: 0.3rem;
+    }
+
+    .overlay p {
+        font-size: 1rem;
+    }
+
+    .align {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .general {
+        width: 90%;
+        height: auto;
+    }
+
+    .button {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay h1 {
+        font-size: 2.7rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .overlay p {
+        font-size: 0.8rem;
+    }
+
+    .general {
+        font-size: 13px;
+        width: 100%;
+        border-radius: 20px;
+        padding: 15px;
+    }
+
+    .general h2 {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+        margin: 5px;
+    }
+}
+
     footer {
         background: linear-gradient(to right, rgb(172, 6, 187), rgb(7, 136, 168));
         color: white;
@@ -246,7 +338,6 @@
         flex-wrap: wrap;
         justify-content: space-evenly;
         gap: 20px;
-        font-size:15px;
       }
       
       .footer-about,
@@ -320,8 +411,12 @@
       }
       @media (max-width: 480px){
         .footer-container  {
-            font-size: 0.5rem;
+            font-size: 15px;
           }
+        .footer-social i{
+            font-size: 20px;
+        }
+        
         
       }
       
@@ -355,24 +450,46 @@
         </div>
     </nav>
     <main>
+        <div class="main-background">
+            <!-- Your content here -->
+         
+          
         <div class="image-container">
             <img src="BG poster 1.png" alt="Event Background">
             <div class="overlay">
-                <h1>Cognitron 2k25</h1>
-                <p style="color: rgb(226, 222, 11);" ><i class="fa-solid fa-calendar-day"></i> April 30, 2025</p>
-                <p><i class="fa-solid fa-location-dot"></i> University College of Engineering, Ariyalur</p>
-                <p>Vilangudi (Trichy - Chidambaram NH81)</p>
-                <button>Poster</button>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdKJszy25dMJvxzDX2cuJQ4KGYAN-KElMxEx4oCOKV3LLbYvw/viewform?usp=dialog"><button>Register Now</button></a>
+                <h1>COGNITRON '25</h1>
+                <p   ><i class="fa-solid fa-calendar-day"></i> April 30, 2025</p>
+                <p  ><i class="fa-solid fa-location-dot"></i> University College of Engineering, Ariyalur</p>
+                <p  >Vilangudi (Trichy - Chidambaram NH81)</p>
+                <div class ="align">
+                <section class="general">
+                    <h2>General instructions for students</h2>
+                    <p>1) Students must bring their id card </p>
+                    <p>2) One person can participate maximum in three events two tech events and one non tech event or vice versa </p>
+                    <p>3) Be on time (starts at 9.30 am) </p>
+                    <p>4) Onspot registration available</p>
+                    <p>5) Participation certificate will be provided for all participants  </p>
+                    <p>6) Lunch will be provided </p>
+                    
+                </section>
                 
-                
-                
+                 <div class="button">
+                <button>Poster <i class="fa-solid fa-download fa-fade"></i></i></button>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdKJszy25dMJvxzDX2cuJQ4KGYAN-KElMxEx4oCOKV3LLbYvw/viewform?usp=dialog"><button>Register Now  <i class="fa-regular fa-clock fa-bounce"></i></i></button></a>
+            </div>
+            </div>
             
             
             </div>
             
+            
+           
+            
+        
+            
+            
          </div>   
-       
+        </div>
         
         
         
@@ -398,6 +515,7 @@
                 <a href="mailto:cognitron25@gmail.com"><i class="fa-solid fa-envelope" target="blank"></i></a>
 
                 <a href="https://wa.me/6382724832" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="tel:+91 9080407781" style="font-size: 33px;"><i class="fa-solid fa-phone"></i> </a>
             </div>
     
             <!-- Integrated Google Map -->
